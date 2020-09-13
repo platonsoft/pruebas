@@ -1,0 +1,32 @@
+<div class="p-grid p-fluid p-jc-center" style="margin-top: 80px; padding: 20px;">
+    <p-panel header="Agregar/Editar Item" class="p-fluid p-formgrid p-grid">
+        <p-toast></p-toast>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+    <div style="min-width: 640px;">
+        <div class="p-col-12 p-p-3">
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText [(ngModel)]="tittleText">
+                <label for="float-input">tittle</label>
+            </span>
+        </div>
+        <div class="p-col-12 p-p-3">
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText [(ngModel)]="accesURLText">
+                <label for="float-input">accesURL</label>
+            </span>
+        </div>
+        <div class="p-col-12 p-p-3">
+            <span class="p-float-label">
+                <input id="float-input" type="text" pInputText [(ngModel)]="aboutText">
+                <label for="float-input">about</label>
+            </span>
+        </div>
+        <div class="p-col-12 p-grid p-p-1">
+            <p-button class="p-col-6" label="Guardar" icon="pi pi-check" styleClass="p-button-success" (onClick)="guardarItem()"></p-button>
+            <p-button class="p-col-6" label="Cancelar" icon="pi pi-times" styleClass="p-button-secondary" (onClick)="cancelar()"></p-button>
+        </div>
+    </div>
+</p-panel>
+</div>

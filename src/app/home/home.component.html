@@ -1,0 +1,39 @@
+<div class="content" role="main">
+  <p-toast></p-toast>
+<p-toast position="top-left" key="tl"></p-toast>
+<p-toast position="top-center" key="tc"></p-toast>
+<p-toast position="bottom-center" key="bc"></p-toast>
+
+    <p-table #dt [value]="products"  [paginator]="true" [rows]="5" [showCurrentPageReport]="true" 
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[5,10,15]">
+      <ng-template pTemplate="header">
+          <tr>
+            <th>id</th>
+            <th>tittle</th>
+            <th>accesURL</th>
+            <th>_about</th>
+            <th>Accion</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-item let-i="rowIndex">
+          <tr>
+            <td>{{i}}</td>
+            <td>{{item.title}}</td>
+            <td><a href="{{item.accessURL}}">Acceso Url</a></td>
+            <td><a href="{{item._about}}">About</a></td>
+            <td style="text-align: center;">
+              <span class="p-buttonset">
+                <button pButton pRipple styleClass="p-button-sm" icon="pi pi-pencil" (click)="editItem(i)"></button>
+                <button pButton pRipple styleClass="p-button-sm" icon="pi pi-trash" (click)="delItem(i)"></button>
+              </span>
+            </td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+        <p-button type="button" icon="pi pi-plus" styleClass="p-button-text" (click)="addItem()"></p-button>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+    </ng-template>
+  </p-table>
+  </div>
